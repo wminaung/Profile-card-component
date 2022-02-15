@@ -8,16 +8,40 @@
 }
 
 body {
-  margin: 0 auto;
-  max-width: 1440px;
-  height: 100vh;
-  background-image: url(/images/bg-pattern-top.svg);
-  background-image: url(/images/bg-pattern-bottom.svg);
   background-color: hsl(185, 75%, 39%);
-  display: flex;
-  align-items: center;
+
   font-family: "Kumbh Sans", sans-serif;
   color: hsl(229, 23%, 23%);
+}
+section {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1440px;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+#bgTop {
+  background-image: url(/images/bg-pattern-top.svg);
+  position: absolute;
+  width: 950px;
+  height: 950px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -475px;
+  left: -300px;
+}
+#bgBot {
+  background-image: url(/images/bg-pattern-bottom.svg);
+  width: 950px;
+  height: 950px;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: -475px;
+  right: -300px;
 }
 
 main {
@@ -31,6 +55,8 @@ main {
   align-items: center;
   border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  z-index: 9999;
 }
 
 .imgH {
@@ -80,4 +106,19 @@ h1 {
 p {
   color: hsl(227, 10%, 46%);
   font-size: 15px;
+}
+
+@media (max-width: 375px) {
+  #bgTop {
+    height: 375px;
+    width: 375px;
+    top: -160px;
+    left: -160px;
+  }
+  #bgBot {
+    height: 375px;
+    width: 375px;
+    bottom: -160px;
+    right: -167px;
+  }
 }
